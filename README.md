@@ -31,3 +31,4 @@ Note that there are many, many paths the cursor could take between any two keys.
 ## Notes
 
 * Though it's not required, you'll find it helpful to run the tests with SBT.  SBT can be downloaded here http://www.scala-sbt.org/ , though instructions for installing and running SBT are beyond the scope of this README.
+* To run the tests, start SBT in the directory you cloned or downloaded, then enter `test` at the SBT console.  Alternatively, you can run the tests directly with `sbt test` from a terminal, though the previous way is faster if you run the tests repeatedly.
