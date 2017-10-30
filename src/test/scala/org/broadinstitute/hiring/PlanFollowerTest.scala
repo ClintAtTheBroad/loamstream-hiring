@@ -2,7 +2,7 @@ package org.broadinstitute.hiring
 
 import org.scalatest.FunSuite
 
-final class PlannerTest extends FunSuite {
+final class PlanFollowerTest extends FunSuite {
   test("Can follow button-press plans") {
     import Keyboard.Querty
     import Button._
