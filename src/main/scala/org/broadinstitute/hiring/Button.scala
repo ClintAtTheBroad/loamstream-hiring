@@ -1,7 +1,13 @@
 package org.broadinstitute.hiring
 
+/**
+ * A trait/ADT to represent all the buttons on our remote control 
+ */
 sealed trait Button
 
+/**
+ * A trait/ADT to represent the directional buttons on our remote control 
+ */
 sealed trait Direction
 
 object Button {
