@@ -3,20 +3,56 @@ package org.broadinstitute.hiring
 import org.scalatest.FunSuite
 
 final class PlannerTest extends FunSuite {
-  test("TODO") {
-    object QuertyKeyboard extends Keyboard {
-      override val rows: IndexedSeq[Row] = IndexedSeq(
-          "qwertyuiop",
-          "asdfghjkl",
-          "zxcvbnm")
-    }
+  test("single-letter 0 - alphabetical") {
+    doTest(Planner.Default, Keyboard.Alphabetical, "a")
+  }
+  
+  test("single-letter 1 - azerty") {
+    doTest(Planner.Default, Keyboard.Azerty, "a")
+  }
+  
+  test("single-letter 2 - azerty") {
+    doTest(Planner.Default, Keyboard.Azerty, "z")
+  }
+  
+  test("single-letter 3 - qwerty") {
+    doTest(Planner.Default, Keyboard.Alphabetical, "k")
+  }
+  
+  test("star - alphabetical") {
+    doTest(Planner.Default, Keyboard.Alphabetical, "star")
+  }
+  
+  test("star - qwerty") {
+    doTest(Planner.Default, Keyboard.Querty, "star")
+  }
+  
+  test("starwars - alphabetical") {
+    doTest(Planner.Default, Keyboard.Alphabetical, "star")
+  }
+  
+  test("starwars - qwerty") {
+    doTest(Planner.Default, Keyboard.Querty, "star")
+  }
+  
+  test("batman - azerty") {
+    doTest(Planner.Default, Keyboard.Azerty, "batman")
+  }
+  
+  test("batman - qwertz") {
+    doTest(Planner.Default, Keyboard.Qwertz, "batman")
+  }
+  
+  test("cat - qwerty") {
+    doTest(Planner.Default, Keyboard.Querty, "cat")
+  }
+  
+  private def doTest(planner: Planner, keyboard: Keyboard, desired: String): Unit = {
+    val plan = planner.findButtonPresses(keyboard)(desired)
     
-    import Button._
+    assert(plan.isEmpty === false)
+    assert(plan.count(_ == Button.Select) === desired.size)
     
-    val plan = Seq(Down, Down, Right, Right, Select, 
-                   Up, Left, Left, Select,
-                   Right, Right, Right, Right, Select)
-    
-    assert(PlanFollower.follow(QuertyKeyboard)(plan) === "cag")
+    assert(PlanFollower.follow(keyboard)(plan) === desired)
   }
 }
