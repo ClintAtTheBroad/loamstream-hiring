@@ -24,27 +24,27 @@ final class PlannerTest extends FunSuite {
   }
   
   test("star - qwerty") {
-    doTest(Planner.Default, Keyboard.Querty, "star")
+    doTest(Planner.Default, Keyboard.Qwerty, "star")
   }
   
   test("starwars - alphabetical") {
-    doTest(Planner.Default, Keyboard.Alphabetical, "star")
+    doTest(Planner.Default, Keyboard.Alphabetical, "starwars")
   }
   
   test("starwars - qwerty") {
-    doTest(Planner.Default, Keyboard.Querty, "star")
+    doTest(Planner.Default, Keyboard.Qwerty, "starwars")
   }
   
-  test("batman - azerty") {
-    doTest(Planner.Default, Keyboard.Azerty, "batman")
+  test("lordoftherings - azerty") {
+    doTest(Planner.Default, Keyboard.Azerty, "lordoftherings")
   }
   
-  test("batman - qwertz") {
-    doTest(Planner.Default, Keyboard.Qwertz, "batman")
+  test("lordoftherings - qwertz") {
+    doTest(Planner.Default, Keyboard.Qwertz, "lordoftherings")
   }
   
   test("cat - qwerty") {
-    doTest(Planner.Default, Keyboard.Querty, "cat")
+    doTest(Planner.Default, Keyboard.Qwerty, "cat")
   }
   
   private def doTest(planner: Planner, keyboard: Keyboard, desired: String): Unit = {

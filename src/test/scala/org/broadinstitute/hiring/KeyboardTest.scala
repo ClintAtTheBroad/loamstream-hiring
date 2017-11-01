@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 final class KeyboardTest extends FunSuite {
   
   test("charAt") {
-    import Keyboard.Querty.charAt
+    import Keyboard.Qwerty.charAt
     import Position.{apply => pos }
 
     //past the (right) end

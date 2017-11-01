@@ -32,7 +32,7 @@ object Keyboard {
   /**
    * Widely used in North America
    */
-  object Querty extends Keyboard {
+  object Qwerty extends Keyboard {
     override val rows: IndexedSeq[Row] = IndexedSeq(
         "qwertyuiop",
         "asdfghjkl",
